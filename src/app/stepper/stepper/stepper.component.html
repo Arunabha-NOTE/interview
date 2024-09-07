@@ -3,15 +3,15 @@
         <p-stepperPanel header="Instructions">
             <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
                 <div class="flex flex-column h-12rem">
-                    <div class=" surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+                    <div class=" surface-ground justify-content-center align-items-center font-medium">
                         <app-instructions />
-                        <div class="card flex justify-content-center">
+                        <div class="card align-items-center gap-1">
                             <p-checkbox
                                 [(ngModel)]="checked"
                                 [binary]="true"
                                 inputId="binary"
                                 (onChange)="onCheckboxChange()"
-                            />
+                            /><label> I have read the instructions and wish to proceed with the test.</label>
                         </div>
                     </div>
                 </div>
