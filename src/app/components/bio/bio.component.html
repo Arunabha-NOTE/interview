@@ -1,1 +1,83 @@
-<app-instructions />
+<div class="max-w-7xl w-full mx-auto  bg-white p-8 shadow-md rounded-lg">
+
+    <!-- Page Title -->
+    <h2 class="text-2xl font-semibold mb-4">Candidate Biography</h2>
+
+    <!-- Name Input -->
+    <div class="mb-4">
+        <label  class="block text-lg font-medium text-gray-700">Full Name</label>
+        <div class="card flex justify-content-center">
+            <textarea [(ngModel)]="value" rows="1"
+                   cols="100"
+                   pInputTextarea
+                      [autoResize]="true" ></textarea>
+        </div>
+    </div>
+
+    <!-- CV Upload -->
+    <div class="mb-4">
+        <div class="card flex justify-content-center">
+            <p-toast />
+            <p-fileUpload
+                name="demo[]"
+                url="https://www.primefaces.org/cdn/api/upload.php"
+                (onUpload)="onUpload($event)"
+                [multiple]="true"
+                accept="image/*"
+                maxFileSize="1000000">
+                <ng-template pTemplate="content">
+                    <ul *ngIf="uploadedFiles.length">
+                        <li *ngFor="let file of uploadedFiles">
+                            {{ file.name }} - {{ file.size }} bytes
+                        </li>
+                    </ul>
+                </ng-template>
+            </p-fileUpload>
+        </div>
+    </div>
+
+    <!-- Tell us about yourself -->
+    <div class="mb-4">
+        <label  class="block text-lg font-medium text-gray-700">Tell us about yourself</label>
+        <div class="card flex justify-content-center">
+            <textarea [(ngModel)]="about" rows="5"
+                   cols="100"
+                   pInputTextarea
+                      [autoResize]="true" ></textarea>
+        </div>
+    </div>
+
+    <!-- Why should we hire you -->
+    <div class="mb-4">
+        <label  class="block text-lg font-medium text-gray-700">Why should we hire you?</label>
+        <div class="card flex justify-content-center">
+            <textarea [(ngModel)]="hire" rows="5"
+                   cols="100"
+                   pInputTextarea
+                   [autoResize]="true"></textarea>
+        </div>
+    </div>
+
+    <!-- What sets you apart -->
+    <div class="mb-4">
+        <label class="block text-lg font-medium text-gray-700">What sets you apart from the others?</label>
+        <div class="card flex justify-content-center">
+            <textarea  [(ngModel)]="unique" rows="5"
+                   cols="100"
+                   pInputTextarea
+                   [autoResize]="true"></textarea>
+        </div>
+    </div>
+
+    <!-- Why are you fit for this position -->
+    <div class="mb-6">
+        <label  class="block text-lg font-medium text-gray-700">Why do you think you are fit for this specific position?</label>
+        <div class="card flex justify-content-center">
+            <textarea  [(ngModel)]="position" rows="5"
+                   cols="100"
+                   pInputTextarea
+                   [autoResize]="true"></textarea>
+        </div>
+    </div>
+</div>
+

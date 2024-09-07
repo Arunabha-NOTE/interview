@@ -8,6 +8,7 @@ import {VideoComponent} from "../../components/video/video.component";
 import {CheckboxModule} from "primeng/checkbox";
 import {FormsModule} from "@angular/forms";
 import {InstructionsComponent} from "../../components/instructions/instructions.component";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -22,5 +23,23 @@ export class StepperComponent {
     disabled: Boolean | undefined = true;
     onCheckboxChange() {
         this.disabled = !this.checked;
+    }
+    constructor(private router: Router) {}
+
+
+
+    scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    submitTest() {
+        this.router.navigate(['/submitted']).then(() => {
+            // Disable back navigation by clearing history
+            window.history.pushState(null, '', window.location.href);
+            window.onpopstate = function () {
+                window.history.pushState(null, '', window.location.href);
+                alert("You cannot navigate back after submitting the test.");
+            };
+        });
     }
 }

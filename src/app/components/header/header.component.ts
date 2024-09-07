@@ -7,6 +7,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { RippleModule } from 'primeng/ripple';
 import {ButtonModule} from "primeng/button";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -21,5 +22,18 @@ export class HeaderComponent {
     ngOnInit() {
         this.items = [
         ];
+    }
+
+    constructor(private router: Router) {}
+
+    submitTest() {
+        this.router.navigate(['/submitted']).then(() => {
+            // Disable back navigation by clearing history
+            window.history.pushState(null, '', window.location.href);
+            window.onpopstate = function () {
+                window.history.pushState(null, '', window.location.href);
+                alert("You cannot navigate back after submitting the test.");
+            };
+        });
     }
 }
