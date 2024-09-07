@@ -1,6 +1,42 @@
-# Interview
+# Online Interview Portal - README
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+## Project Overview
+
+Welcome to the **Online Interview Portal**! This Angular-based web application is designed to facilitate seamless interview management for both interviewers and interviewees. It allows users to schedule, conduct, and review interviews via a streamlined portal with real-time communication tools. The project is built using modern web technologies and follows industry standards to ensure scalability, maintainability, and an intuitive user experience.
+
+## Features
+
+- Schedule interviews with ease.
+- Conduct real-time video interviews.
+- Track interview history and manage candidate information.
+- Review interview feedback and results.
+
+## Prerequisites
+
+Ensure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (version 16.x or higher)
+- [Angular CLI](https://angular.io/cli) (version 14.x or higher)
+
+## Installation Instructions
+
+### Step 1: Install Node.js
+
+If Node.js is not installed on your machine, follow the instructions below:
+
+1. **Download Node.js**  
+   Visit the [Node.js download page](https://nodejs.org/) and download the LTS version for your operating system.
+
+2. **Install Node.js**  
+   Follow the installation prompts for your OS.
+
+3. **Verify Installation**  
+   Open your terminal or command prompt and run the following command to check if Node.js is installed correctly:
+   ```bash
+   node -v
+
+   npm -v
+   ```
 
 ## Development server
 
