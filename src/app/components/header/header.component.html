@@ -42,9 +42,11 @@
         </ng-template>
         <ng-template pTemplate="end">
             <div class="flex align-items-center gap-2">
-                <div class="card flex justify-content-center">
-                    <p-button label="Submit" />
-                </div>
+                <a routerLink="/submitted">
+                    <div class="card flex justify-content-center">
+                        <p-button label="Submit" />
+                    </div>
+                </a>
             </div>
         </ng-template>
     </p-menubar>
