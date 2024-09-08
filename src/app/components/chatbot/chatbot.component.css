@@ -1,0 +1,11 @@
+/* Scrollable chat area */
+.flex-1 {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: calc(100vh - 150px); /* Adjust this for the input area height */
+}
+
+.max-w-md {
+    max-width: 75%;
+}

@@ -8,15 +8,28 @@ import { CommonModule } from '@angular/common';
 import { RippleModule } from 'primeng/ripple';
 import {ButtonModule} from "primeng/button";
 import {Router} from "@angular/router";
+import { SidebarModule } from 'primeng/sidebar';
+import {DialogModule} from "primeng/dialog";
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
+
+
+
 
 @Component({
   selector: 'app-header',
   standalone: true,
-    imports: [MenubarModule, BadgeModule, AvatarModule, InputTextModule, RippleModule, CommonModule, ButtonModule],
+    imports: [MenubarModule, BadgeModule, AvatarModule, InputTextModule, RippleModule, ButtonModule, SidebarModule, ButtonModule, InputTextModule, DialogModule, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+    visible: boolean = false;
+
+    showDialog() {
+        this.visible = true;
+    }
+
+    sidebarVisible: boolean = false;
     items: MenuItem[] | undefined;
 
     ngOnInit() {

@@ -1,1 +1,23 @@
-<p>psy works!</p>
+<div class="max-w-7xl min-w-7xl my-2 mx-auto bg-white p-8 shadow-md rounded-lg">
+    <!-- Question -->
+    <h3 class="text-lg font-semibold mb-4">{{ question.text }}</h3>
+
+    <!-- Options -->
+    <div class="">
+        <div *ngFor="let option of question.options; let i = index"
+             class="border rounded-lg">
+            <p>{{ option.text }}</p>
+        </div>
+    </div>
+
+    <!-- Input Areas for Option Numbers -->
+    <div class="mb-4">
+        <label for="mostEffective" class="block text-lg font-medium text-gray-700">Most Effective Option Number</label>
+        <input type="number" id="mostEffective" [(ngModel)]="mostEffective" placeholder="Enter option number" class="mt-2 p-3 w-full border border-gray-300 rounded-lg"/>
+    </div>
+
+    <div>
+        <label for="leastEffective" class="block text-lg font-medium text-gray-700">Least Effective Option Number</label>
+        <input type="number" id="leastEffective" [(ngModel)]="leastEffective" placeholder="Enter option number" class="mt-2 p-3 w-full border border-gray-300 rounded-lg"/>
+    </div>
+</div>

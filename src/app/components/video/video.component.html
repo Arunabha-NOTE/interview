@@ -1,1 +1,19 @@
-<p>video works!</p>
+<div class="max-w-7xl my-auto mx-auto bg-white p-8 shadow-md rounded-lg flex flex-col items-center space-y-6">
+    <!-- Question Section -->
+    <h2 class="text-2xl font-semibold text-gray-800">{{ question }}</h2>
+
+    <!-- Video Display Section -->
+    <video #videoPlayer autoplay muted class="border rounded-lg max-w-full"></video>
+
+    <!-- Video Controls -->
+    <div class="flex space-x-4">
+        <button pButton type="button" (click)="startRecording()" label="Start Recording" class="bg-green-500 text-white p-2 rounded-lg"></button>
+        <button pButton type="button" (click)="stopRecording()" label="Stop Recording" class="bg-red-500 text-white p-2 rounded-lg" [disabled]="!isRecording"></button>
+    </div>
+
+    <!-- Save Video Button -->
+    <div *ngIf="videoUrl">
+        <a [href]="videoUrl" download="recorded-video.mp4" pButton label="Save Video" class="mt-4 bg-blue-500 text-white p-2 rounded-lg"></a>
+    </div>
+</div>
+
