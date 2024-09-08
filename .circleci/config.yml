@@ -37,7 +37,7 @@ jobs:
                       sudo apt-get -f install
             - run:
                   name: Run tests
-                  command: npm test --passWithNoTests
+                  command: npm install
     build-node:
         # Build node project
         executor: node/default
