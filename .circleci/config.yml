@@ -10,6 +10,20 @@ jobs:
             - node/install-packages:
                   pkg-manager: npm
             - run:
+                  name: Install dependencies for Chrome
+                  command: |
+                      sudo apt-get update
+                      sudo apt-get install -y wget gnupg
+                      sudo apt-get install -y \
+                        libxcb1 \
+                        libxcomposite1 \
+                        libxdamage1 \
+                        libxext6 \
+                        libxfixes3 \
+                        libxkbcommon0 \
+                        libxrandr2 \
+                        xdg-utils
+            - run:
                   name: Install latest Chrome
                   command: |
                       wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
