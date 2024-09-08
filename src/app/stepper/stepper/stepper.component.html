@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="flex pt-4 justify-content-end">
-                    <p-button [disabled] = "disabled" label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit(); scrollToTop()" />
+                    <p-button [disabled] = "disabled" label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit(); scrollToTop(); resetDisabled()" />
                 </div>
             </ng-template>
         </p-stepperPanel>
@@ -25,10 +25,18 @@
                 <div class="">
                     <div class="">
                         <app-bio />
+                        <div class="card align-items-center gap-1">
+                            <p-checkbox
+                                [(ngModel)]="checked"
+                                [binary]="true"
+                                inputId="binary"
+                                (onChange)="onCheckboxChange()"
+                            /><label> I am done with this section.</label>
+                        </div>
                     </div>
                 </div>
                 <div class="flex pt-4 justify-content-between">
-                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit(); scrollToTop()" />
+                    <p-button [disabled] = "disabled" label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit(); scrollToTop(); resetDisabled()" />
                 </div>
             </ng-template>
         </p-stepperPanel>
@@ -37,10 +45,18 @@
                 <div class="flex flex-column h-12rem">
                     <div class="surface-ground flex-auto flex justify-content-center align-items-center font-medium">
                         <app-psy />
+                        <div class="card align-items-center gap-1">
+                            <p-checkbox
+                                [(ngModel)]="checked"
+                                [binary]="true"
+                                inputId="binary"
+                                (onChange)="onCheckboxChange()"
+                            /><label> I am done with this section.</label>
+                        </div>
                     </div>
                 </div>
                 <div class="flex pt-4 justify-content-between">
-                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit(); scrollToTop()" />
+                    <p-button [disabled] = "disabled" label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit(); scrollToTop(); resetDisabled()" />
                 </div>
             </ng-template>
         </p-stepperPanel>
@@ -49,10 +65,18 @@
                 <div class="flex flex-column h-12rem">
                     <div class="surface-ground flex-auto flex justify-content-center align-items-center font-medium">
                         <app-chatbot />
+                        <div class="card align-items-center gap-1">
+                            <p-checkbox
+                                [(ngModel)]="checked"
+                                [binary]="true"
+                                inputId="binary"
+                                (onChange)="onCheckboxChange()"
+                            /><label> I am done with this section.</label>
+                        </div>
                     </div>
                 </div>
                 <div class="flex pt-4 justify-content-between">
-                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit(); scrollToTop()" />
+                    <p-button [disabled] = "disabled" label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit(); scrollToTop(); resetDisabled()" />
                 </div>
             </ng-template>
         </p-stepperPanel>
@@ -61,10 +85,18 @@
                 <div class="flex flex-column h-12rem">
                     <div class="surface-ground flex-auto flex justify-content-center align-items-center font-medium">
                         <app-video />
+                        <div class="card align-items-center gap-1">
+                            <p-checkbox
+                                [(ngModel)]="checked"
+                                [binary]="true"
+                                inputId="binary"
+                                (onChange)="onCheckboxChange()"
+                            /><label> I am done with this section.</label>
+                        </div>
                     </div>
                 </div>
                 <div class="flex pt-4 justify-content-start">
-                    <p-button label="Submit" icon="pi pi-arrow-left" (onClick)="scrollToTop(); submitTest()" />
+                    <p-button [disabled] = "disabled" label="Submit" icon="pi pi-arrow-left" (onClick)="scrollToTop(); submitTest(); resetDisabled()" />
                 </div>
             </ng-template>
         </p-stepperPanel>

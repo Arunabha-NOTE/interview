@@ -26,6 +26,10 @@ export class StepperComponent {
     }
     constructor(private router: Router) {}
 
+    resetDisabled() {
+        this.disabled = true;
+        this.checked = false;
+    }
 
 
     scrollToTop() {
